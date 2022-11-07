@@ -1,0 +1,68 @@
+<html>
+<body>
+	<center>
+	<table border="4">
+		<tr>
+		    <td> <img src="20.png" onscroll="4"></td>
+		    <td colspan="3"><center> <img src="title.png"></center><br><a href="home.html"> <img src="11.png"><img src="12.png"> </a> <a href="help.html"><img src="13.png"></a> <a href="home.html"><img src="14.png"></a> <a href="request.html"><img src="15.png"></a></td>
+			
+			<td> <center><h1><b>Admin entry</b></h1></center><a href="form.php"> <img src="re.jpg"> </a></td>	
+		</tr>	
+		<tr>
+		    <td rowspan="2"> <img src="a.jpg" onscroll="4"> <br><img src="aa.jpg" onscroll="4"></td>
+		    <td colspan="3" rowspan="2"> 
+                       
+                       <center>
+		    	<form action="display.php"method="POST">
+                 <a href="logout.php">logout</a><br><br>
+                 <a href="insert.php">Add an other record</a><br><br>
+                     </form>
+                     </center>
+                 <?php
+$con=mysql_connect("localhost","root","");
+$db=mysql_select_db(berwashop);
+$qu=mysql_query("select* from product");
+echo"<table border='1' align='center'>";
+echo"<tr><th>product_code</th>
+         <th>product_name</th>
+		  <th>action</th></tr>";
+while($row=mysql_fetch_array($qu,MYSQL_ASSOC))
+{
+	echo"</tr>";
+	echo'<td>'.$row['product_code'].'</td>';
+	echo'<td>'.$row['product_name'].'</td>';
+	echo"<td><a href='update.php?product_code=$row[product_code]'>edit</a></td>";
+	?>
+<td><a href="delete.php?product_code=<?php
+echo$row[product_code]?>"onclick="return confirm('are you sure you want to delete this record?')">delete</a></td>
+<?php
+echo"</tr>";
+}
+echo"</table>";
+?>
+	 
+		    	</center>
+
+		    </td>
+			
+			<td rowspan="2"> <center>ADVERTISMENT</center> <br> <marquee direction="left" behavior="" style="background: cyan;"> TO AVERTISE WITH US PLEASE <br> CALL US <br>ON <br>0782192851 </marquee> <br><img src="22.png" onscroll="4"><br><img src="ew.jpg" onscroll="4"> </td>
+		</tr>
+		<tr>
+		    
+			
+		</tr>
+
+		<tr>
+		    
+	        <td colspan="5" bgcolor="cyan"> <center> <b><i> @ copy right Theoneste NDACYAYISABA </i></b> </center>  <b>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="left.png" onscroll="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="centa.png" onscroll="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="rait.png" onscroll="4"></b>
+	        	
+	         </td>
+			
+			
+		</tr>	
+	</table>
+</body>
+</html>
+
+
+
